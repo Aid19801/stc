@@ -1,0 +1,105 @@
+
+src
+  index.js
+  registerServiceWorker.js
+  lib/
+    reuseable-components
+      image-factory
+        image-factory
+        image-factory.test.js
+        styles.css
+      logo
+        logo.svg
+        
+
+  Data/
+    data.json
+
+  App/
+    App.js
+    App.test.js
+    styles.css
+    Home/
+      Header/
+        header-container.js
+        styles.css
+        header.test.js
+
+        Components/
+            header-row/
+              header.row
+              header-row.test.js
+              styles.css
+            header-section/
+              header-section
+              header-section.test.js
+              styles.css
+
+      Body/
+        video-container.js
+        video-container.test.js
+        memes-container.js
+        memes-container.test.js
+        quotes-container.js
+        quotes-container.test.js
+        googleAds-container.js
+        googleAds-container.test.js
+        styles.css
+
+        Components/
+            video-rail/
+              video-rail
+              video-rail.test.js
+              styles.css
+            memes-rail/
+              memes-rail
+              memes-rail.test.js
+              styles.css
+            quote-box/
+              quote-box
+              quote-box.test.js
+              styles.css
+            googleAds-box/
+              advert-box
+              advert-box.test.js
+              styles.css
+
+      Footer/
+        footer-container.js
+        styles.css
+        footer.test.js
+
+        Components/
+            footer-row/
+              footer.row
+              footer-row.test.js
+              styles.css
+            footer-section/
+              footer-section
+              footer-section.test.js
+              styles.css
+
+
+
+
+
+              import React, { Component, PropTypes } from 'react';
+              // import PropTypes from 'prop-types';
+
+              export const helloFactory = (PlatformSpecificComponent) => {
+                const hello = () => (
+                  <div>
+                    <h1>I said hello</h1>
+                    <button onclick={this.increment}>click me</button>
+                  </div>
+                );
+                return hello;
+              }
+
+              export default helloFactory;
+
+
+BUGS
+// TO-DO
+// far right stretching needs sorting/length
+// not going across the page properly
