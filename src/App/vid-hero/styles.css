@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Press+Start+2P');
+
+
+.vid-section-container {
+    border: 1px solid black;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: #6C2A05;
+}
+
+.vid-container-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.vid-containter-h1 {
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 1px 1px 1px black;
+    color: white;
+}
+
+.vid-box-container {
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+}
+
+.vid-box {
+    flex-grow: 1;
+    flex-direction: row;
+    text-align: center;
+    border: 1px solid #6C2A05;
+}
+
+.vid-box-title {
+    font-family: 'Lobster', cursive;
+    color: #E29A72;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .container {
+        justify-content: space-around;
+    }
+}
+
+
+@media only screen and (min-width: 501px) {
+    .resp-navbar-item {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        flex-direction: column; 
+        display: block;
+
+        padding-top: 0.2vh;
+        padding-bottom: 0.2vh;
+    }
+
+    .navbar-item {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
