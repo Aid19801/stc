@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header/header';
-import VideoSectionContainer from './vid-hero/vid-hero';
+import VideoSectionContainer from './Vid-Section/vid-hero';
 import styles from './App.css';
 
 class App extends Component {
