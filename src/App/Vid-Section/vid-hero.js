@@ -18,7 +18,6 @@ class VideoSectionContainer extends Component {
 
 
     render() {
-        console.log('this.props.fetching: ', this.props.fetching);
         const { videos } = this.props || [];
         const { fetching } = this.props;
         return (
@@ -32,12 +31,15 @@ class VideoSectionContainer extends Component {
                 <div className="vid-box-container">
                 { fetching ? <img className="loading-eggtimer" src={eggtimer} width={30} height={30} /> : null }
 
-                    { videos.map((each, i) => <div key={i} className="vid-box">
-                                                <img src={videoPlaceholder} className="vid-box-player" width={400} height={200} />
-                                                <h2 className="vid-box-title">{each.title}</h2>
-                                                <h4 className="vid-box-title">{each.tagline}</h4>
-                                            </div>
-                                        )}
+                    {
+                        videos.map((each, i) => <div key={i} className="vid-box">
+                            <img src={videoPlaceholder} className="vid-box-player" width={400} height={200} />
+                            <h2 className="vid-box-title">{each.title}</h2>
+                            <h4 className="vid-box-title">{each.tagline}</h4>
+                        </div>
+                        )
+                    }
+
                 </div>
 
             </div>
@@ -60,3 +62,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoSectionContainer);
+
+

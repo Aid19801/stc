@@ -1,12 +1,12 @@
 import { takeLatest, call, put } from 'redux-saga/effects'; 
 
-// watcher saga: watches for actions dispatched to the store, starts worker saga
+import offlineData from '../Data/data.json';
+
 export function* watcherSaga() {
     yield takeLatest("API_CALL_REQUEST", workerSaga);
 }
 
-// function that makes the api request and returns a Promise for response
-function fetchVids() {
+function fetchVidsOnline() {
     return fetch(`http://localhost:3004/videos/`, {
         cache: 'no-cache',
         credentials: 'same-origin',
@@ -18,14 +18,21 @@ function fetchVids() {
     }).then((res) => res.json()).then(myJson => myJson);
 }
 
-// worker saga: makes the api call when watcher saga sees the action
+// function fetchVidsOffline() {
+//     return offlineData;
+// }
+
+
 function* workerSaga() {
     try {
-        const response = yield call(fetchVids);
+        const response = yield call(fetchVidsOnline);
+        console.log('response: ', response);
         yield put({ type: "API_CALL_SUCCESS", response });
+        
+        // const offlineResponse = response.videos;
+        // yield put({ type: "API_CALL_SUCCESS", offlineResponse });
 
     } catch (error) {
-        // dispatch a failure action to the store with the error
         yield put({ type: "API_CALL_FAILURE", error });
     }
 }

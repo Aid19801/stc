@@ -1,7 +1,16 @@
 {
-    "company": {
-        "name": "Socially Transmitted Comedy",
-        "acronym": "STC",
-        "tagline": "We here, we're weird..."
+    "videos": [
+    {
+        "title": "The Bouncer",
+        "tagline": "Ipsum Lorum and stuff and things."
+    },
+    {
+        "title": "The Interview",
+        "tagline": "Sometimes i put blurb into components"
+    },
+    {
+        "title": "Some Days Are Nights",
+        "tagline": "Coding on a train & need blurb here."
     }
+    ]
 }

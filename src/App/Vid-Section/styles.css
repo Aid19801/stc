@@ -18,7 +18,7 @@
     font-family: 'Press Start 2P', cursive;
     text-shadow: 5px 5px 5px black;
     color: white;
-    font-size: 10vh;
+    font-size: 15vh;
 }
 
 .vid-box-container {
@@ -31,6 +31,7 @@
     flex-grow: 1;
     flex-direction: row;
     text-align: center;
+    border: 1px solid white;
 }
 
 .vid-box-player {

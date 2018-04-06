@@ -1,3 +1,11 @@
 .App {
   border: 1px solid black;
+  animation-name: white-in;
+  animation-duration: 2s;
+}
+
+
+@keyframes white-in {
+  from { background-color: white; }
+  to { background-color: red; }
 }
