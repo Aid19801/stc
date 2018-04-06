@@ -18,7 +18,7 @@
     font-family: 'Press Start 2P', cursive;
     text-shadow: 5px 5px 5px black;
     color: white;
-    font-size: 10vh;
+    font-size: 15vh;
 }
 
 .vid-box-container {
@@ -31,6 +31,7 @@
     flex-grow: 1;
     flex-direction: row;
     text-align: center;
+    border: 1px solid white;
 }
 
 .vid-box-player {
@@ -42,6 +43,10 @@
     color: #E29A72;
 }
 
+.loading-eggtimer {
+    align-items: center;
+    text-align: center;
+}
 
 @media only screen and (max-width: 800px) {
     .vid-containter-h1 {
