@@ -26,7 +26,7 @@ class Header extends Component {
         return(
             <div className="container">
                 <img 
-                    className="hamburger" 
+                    className="hamburger hamb-img" 
                     onClick={this.openMobNav}
                     src={hamburger} 
                     width={30} 
@@ -38,7 +38,7 @@ class Header extends Component {
                     </ul>
                     : null 
                 }
-                {headerNames.sections.map((each, i) => {
+                { headerNames.sections.map((each, i) => {
                     return <a href={each.link} key={i} className="navbar-item">{each.name}</a>
                 })}
             </div>
