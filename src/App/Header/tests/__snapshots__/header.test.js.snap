@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Tests | 🌹 should match the Header.js code snapshot 1`] = `
+<div
+  className="container"
+>
+  <img
+    className="hamburger hamb-img"
+    height={30}
+    onClick={[Function]}
+    src="hamburger.png"
+    width={30}
+  />
+  <a
+    className="navbar-item"
+    href="#"
+    key="0"
+  >
+    home
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="1"
+  >
+    about
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="2"
+  >
+    media
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="3"
+  >
+    gallery
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="4"
+  >
+    contact
+  </a>
+</div>
+`;
+
+exports[`Header Tests 🌹 should match the Header.js code snapshot 1`] = `
+<div
+  className="container"
+>
+  <img
+    className="hamburger hamb-img"
+    height={30}
+    onClick={[Function]}
+    src="hamburger.png"
+    width={30}
+  />
+  <a
+    className="navbar-item"
+    href="#"
+    key="0"
+  >
+    home
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="1"
+  >
+    about
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="2"
+  >
+    media
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="3"
+  >
+    gallery
+  </a>
+  <a
+    className="navbar-item"
+    href="#"
+    key="4"
+  >
+    contact
+  </a>
+</div>
+`;

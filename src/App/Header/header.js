@@ -19,6 +19,7 @@ class Header extends Component {
             isDesktop: false,
             navOpen: !this.state.navOpen,
         })
+        return 'yoyo'
     }
 
     render() {
