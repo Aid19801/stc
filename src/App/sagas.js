@@ -18,20 +18,11 @@ function fetchVidsOnline() {
     }).then((res) => res.json()).then(myJson => myJson);
 }
 
-// function fetchVidsOffline() {
-//     return offlineData;
-// }
-
-
 function* workerSaga() {
     try {
         const response = yield call(fetchVidsOnline);
         console.log('response: ', response);
         yield put({ type: "API_CALL_SUCCESS", response });
-        
-        // const offlineResponse = response.videos;
-        // yield put({ type: "API_CALL_SUCCESS", offlineResponse });
-
     } catch (error) {
         yield put({ type: "API_CALL_FAILURE", error });
     }

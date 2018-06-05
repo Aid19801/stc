@@ -4,7 +4,7 @@ import eggtimer from './eggtimer.png';
 import styles from './styles.css';
 import { connect } from "react-redux";
 
-class VideoSectionContainer extends Component {
+export class VideoSectionContainer extends Component {
     constructor() {
         super();
         this.state = {
