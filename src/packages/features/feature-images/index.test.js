@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import VideoContainerCardFactory from './index';
 
-let wrapper, expectedProps;
+let wrapper;
 
 describe('feature images', () => {
 
@@ -10,38 +10,49 @@ describe('feature images', () => {
         img: 'defaultImageString',
         title: 'defaultTitleString',
         tagline: 'defaultTaglineString',
+        handleClick: jest.fn(),
     }
 
     beforeAll((() => {
-        const MockComponent = () => <p>test</p>;
+        const MockComponent = () => <div>test</div>;
         const TestComponent = VideoContainerCardFactory(MockComponent);
         wrapper = mount(<TestComponent {...defaultProps} />);
-
-        expectedProps = {
-            img: "defaultImageString",
-            tagline: "defaultTaglineString",
-            title: "defaultTitleString",
-        }
     }))
 
     it('should render the Video Card Component without exploding...', () => {  
         expect(wrapper).toBeTruthy();
     });
 
-    it('should render an app with the expected props', () => {
-        expect(wrapper.props()).toEqual(expectedProps);
+    it('should render an Image Card with the expected props', () => {
+
+        const expectedProps = {
+            img: 'defaultImageString',
+            title: 'defaultTitleString',
+            tagline: 'defaultTaglineString',
+            handleClick: () => true,
+        };
+
+        const arrayOfExpectedProps = Object.keys(expectedProps);
+        const arrayOfRenderedProps = Object.keys(wrapper.props());
+        expect(arrayOfRenderedProps).toEqual(arrayOfExpectedProps);
     });
 
     it('should render the expected image src', () => {
-        const MockComponent = () => <p>new test</p>;
+        const MockComponent = () => <div>test</div>;
         const TestComponent = VideoContainerCardFactory(MockComponent);
         const newProps = { ...defaultProps, img: 'new-img' };
-        const newExpectedProps = {
-            img: 'new-img',
-            title: 'defaultTitleString',
-            tagline: 'defaultTaglineString',
-        }
         wrapper = mount(<TestComponent {...newProps} />)
-        expect(wrapper.props()).toEqual(newExpectedProps);
+        const renderedImageProp = wrapper.props().img;
+
+        const expectedImageProp = 'new-img';
+        expect(renderedImageProp).toEqual(expectedImageProp);
+    });
+
+    it('should handle clicks of the video card', () => {
+        const MockComponent = () => <div>test</div>;
+        const TestComponent = VideoContainerCardFactory(MockComponent);
+        const shallowWrapper = shallow(<TestComponent {...defaultProps} />);
+        shallowWrapper.simulate('click');
+        expect(defaultProps.handleClick).toHaveBeenCalledTimes(1);
     });
 })
