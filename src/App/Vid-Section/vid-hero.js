@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import videoPlaceholder from './videoPlaceholder.jpg'
 import PaneBox from '../Reuseable-Components/Pane-Box/pane-box';
 import eggtimer from './eggtimer.png';
 import styles from './styles.css';
 import { connect } from "react-redux";
-import data from '../../Data/db.json';
 
 class VideoSectionContainer extends Component {
     constructor() {
@@ -32,12 +30,8 @@ class VideoSectionContainer extends Component {
                 </div>
 
                 <div className="flex-container">
-                { fetching ? <img className="loading-eggtimer" src={eggtimer} width={30} height={30} /> : null }
-
-                    {
-                        videos.map((each, i) => <PaneBox eachVideo={each} key={i} />)
-                    }
-
+                    { fetching ? <img className="loading-eggtimer" src={eggtimer} width={30} height={30} /> : null }
+                    {videos.map((each, i) => <PaneBox eachVideo={each} key={i} />)}
                 </div>
 
             </div>
