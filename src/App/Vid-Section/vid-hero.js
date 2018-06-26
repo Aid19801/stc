@@ -21,7 +21,6 @@ class VideoSectionContainer extends Component {
 
 
     render() {
-        console.log('data is: ', data);
         const { videos } = this.props || [];
         const { fetching } = this.props;
         return (

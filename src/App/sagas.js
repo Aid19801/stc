@@ -1,12 +1,16 @@
 import { takeLatest, call, put } from 'redux-saga/effects'; 
-import offlineData from '../Data/db.json';
-import { POINT_CONVERSION_COMPRESSED } from 'constants';
+import data from '../Data/db.json';
 
+// 1 environment util so dev can continue without json-server
+let jsonServerIsOnline = false;
+
+// 2 watcher saga listens for API call, fires off worker saga.
 export function* watcherSaga() {
     yield takeLatest("API_CALL_REQUEST", workerSaga);
 }
 
-function fetchVidsOnline() {
+
+function jsonServerData() {
     return fetch(`http://localhost:3004/videos/`, {
         cache: 'no-cache',
         credentials: 'same-origin',
@@ -18,35 +22,17 @@ function fetchVidsOnline() {
     }).then((res) => res.json()).then(myJson => myJson);
 }
 
-function fetchVidsOffline() {
-    return new Promise((resolve, reject) => {
-        resolve(offlineData);
-    })
+// 4 mockVids() checks if JsonServer is online,
+// if it is, we fetch json, if not, return db.json mocks.
+function mockVids() {
+    return jsonServerIsOnline ? jsonServerData() : data.videos;
 }
-
-
-// function* workerSaga() {
-//     try {
-//         const response = yield call(fetchVidsOnline);
-//         console.log('response: ', response);
-//         yield put({ type: "API_CALL_SUCCESS", response });
-        
-//         // const offlineResponse = response.videos;
-//         // yield put({ type: "API_CALL_SUCCESS", offlineResponse });
-
-//     } catch (error) {
-//         yield put({ type: "API_CALL_FAILURE", error });
-//     }
-// }
-
+// 3 worker saga gets data based on whether jsonServer is active
+// or not, by firing off mockVids()
 function* workerSaga() {
     try {
-        const response = yield call(fetchVidsOffline);
-        console.log('response: ', response);
+        const response = yield call(mockVids);
         yield put({ type: "API_CALL_SUCCESS", response });
-        
-        // const offlineResponse = response.videos;
-        // yield put({ type: "API_CALL_SUCCESS", offlineResponse });
 
     } catch (error) {
         yield put({ type: "API_CALL_FAILURE", error });
