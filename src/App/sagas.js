@@ -9,7 +9,7 @@ export function* watcherSaga() {
     yield takeLatest("API_CALL_REQUEST", workerSaga);
 }
 
-
+// 5 standard fetch for a mock json server
 function jsonServerData() {
     return fetch(`http://localhost:3004/videos/`, {
         cache: 'no-cache',
