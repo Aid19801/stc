@@ -6,6 +6,7 @@
   border: 1px solid black;
   animation-name: white-in;
   animation-duration: 2s;
+  overflow-x: hidden;
 }
 
 

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import videoPlaceholder from './videoPlaceholder.jpg'
+// import videoPlaceholder from './videoPlaceholder.jpg'
+import PaneBox from '../Reuseable-Components/Pane-Box/pane-box';
 import eggtimer from './eggtimer.png';
 import styles from './styles.css';
 import { connect } from "react-redux";
+import data from '../../Data/db.json';
 
 class VideoSectionContainer extends Component {
     constructor() {
@@ -17,27 +19,24 @@ class VideoSectionContainer extends Component {
     }
 
 
+
     render() {
+        console.log('data is: ', data);
         const { videos } = this.props || [];
         const { fetching } = this.props;
         return (
 
-            <div className="vid-section-container">
+            <div className="mainSiteBanner">
 
-                <div className="vid-container-title">
+                <div className="mainSiteTitle">
                     <h1 className="vid-containter-h1">Videohead</h1>
                 </div>
 
-                <div className="vid-box-container">
+                <div className="flex-container">
                 { fetching ? <img className="loading-eggtimer" src={eggtimer} width={30} height={30} /> : null }
 
                     {
-                        videos.map((each, i) => <div key={i} className="vid-box">
-                            <img src={videoPlaceholder} className="vid-box-player" width={400} height={200} />
-                            <h2 className="vid-box-title">{each.title}</h2>
-                            <h4 className="vid-box-title">{each.tagline}</h4>
-                        </div>
-                        )
+                        videos.map((each, i) => <PaneBox eachVideo={each} key={i} />)
                     }
 
                 </div>

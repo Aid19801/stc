@@ -4,7 +4,7 @@ import VideoContainerCardFactory from './index';
 
 let wrapper;
 
-describe('feature images', () => {
+describe('Video Container Card Factory', () => {
 
     const defaultProps = {
         img: 'defaultImageString',
@@ -55,4 +55,10 @@ describe('feature images', () => {
         shallowWrapper.simulate('click');
         expect(defaultProps.handleClick).toHaveBeenCalledTimes(1);
     });
+
+    it('should have a border for the card', () => {
+        const MockComponent = () => <div>test</div>;
+        const TestComponent = VideoContainerCardFactory(MockComponent);
+        const shallowWrapper = shallow(<TestComponent {...defaultProps} />);
+    })
 })

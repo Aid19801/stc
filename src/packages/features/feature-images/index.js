@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const VideoContainerCardFactory = (PlatformSpecificComponent) => {
+export const VideoContainerCardFactory = PlatformSpecificComponent => {
 
     const VideoContainerCard = ({ img, title, tagline, handleClick }) => {
 

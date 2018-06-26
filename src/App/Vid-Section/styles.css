@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Press+Start+2P');
 
 
-.vid-section-container {
+.mainSiteBanner {
     border: 1px solid black;
     padding-top: 1vh;
     padding-bottom: 1vh;
     background-color: #6C2A05;
 }
 
-.vid-container-title {
+.mainSiteTitle {
     flex-grow: 1;
     text-align: center;
 }
@@ -21,26 +21,11 @@
     font-size: 15vh;
 }
 
-.vid-box-container {
+.flex-container {
     display: flex;
-    flex-flow: row wrap;
-    flex-wrap: wrap;
-}
-
-.vid-box {
-    flex-grow: 1;
     flex-direction: row;
-    text-align: center;
-    border: 1px solid white;
-}
-
-.vid-box-player {
-    border: 1px solid white;
-}
-
-.vid-box-title {
-    font-family: 'Lobster', cursive;
-    color: #E29A72;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .loading-eggtimer {
@@ -57,9 +42,5 @@
 @media only screen and (max-width: 500px) {
     .vid-containter-h1 {
         font-size: 6vh;
-    }
-
-    .vid-box-player {
-        width: 380px;
     }
 }
