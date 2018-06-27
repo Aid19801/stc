@@ -26,7 +26,8 @@ class Header extends Component {
         return(
             <div className="container">
                 <img 
-                    className="hamburger" 
+                    className="hamburger"
+                    alt="hamburger"
                     onClick={this.openMobNav}
                     src={hamburger} 
                     width={30} 

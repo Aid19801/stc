@@ -16,8 +16,6 @@ class VideoSectionContainer extends Component {
         this.props.onRequestVids();
     }
 
-
-
     render() {
         const { videos } = this.props || [];
         const { fetching } = this.props;
