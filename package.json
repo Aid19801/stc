@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "startServer": "json-server --watch --port 3004 src/Data/db.json",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

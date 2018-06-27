@@ -25,6 +25,7 @@
     font-size: 3vh;
     text-align: center;
     margin-top: 0;
+    text-decoration: none;
 
     animation-name: bouncein;
     animation-duration: 0.4s;

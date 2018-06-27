@@ -1,0 +1,32 @@
+.paneBox-outerDiv {
+    text-align: center;
+    border: 1px solid white;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    transition: all 0.3s ease;
+}
+
+.paneBox-outerDiv:hover {
+    opacity: 0.9;
+    margin: 2px;
+    border: 5px solid white;
+}
+
+.paneBox-fineBorder {
+    border: 1px solid grey;
+    margin: 15px;
+}
+
+.paneBox-title {
+    font-family: 'Lobster', cursive;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .paneBox-player {
+        width: 380px;
+    }
+}
