@@ -12,7 +12,7 @@ class Header extends Component {
             navOpen: false,
         }
     }
-
+    // needs mocking for tests
     openMobNav = () => {
         this.setState({
             isMobile: true,
