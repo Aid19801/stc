@@ -1,8 +1,14 @@
 machine:
   node:
     version: 6.0.0
+
 test:
   override:
     - npm test -- --coverage
   post:
     - echo ===== build has completed ======
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: videohead
