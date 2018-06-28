@@ -17,7 +17,8 @@ const sagaMiddleware = createSagaMiddleware();
 // dev tools middleware
 const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-// create a redux store with our reducer above and middleware
+// create a redux store with our reducer above, saga middleware (so sagas can hear actions) &
+// dev tools. 
 let store = createStore(
     reducer,
     compose(applyMiddleware(sagaMiddleware), reduxDevTools)
