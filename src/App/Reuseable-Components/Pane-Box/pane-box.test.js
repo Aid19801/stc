@@ -5,7 +5,7 @@ import PaneBox from './pane-box';
 
 describe('Pane Box', () => {
 
-    const mockProp = { title: "Test Title", tagline: "Test Tagline" };
+    const mockProp = { title: "Test Title", tagline: "Test Tagline", imageOne: "www.testimg.net" };
     const wrapper = shallow(<PaneBox eachVideo={mockProp} />);
 
     it('should render the Pane Box without exploding...', () => {
@@ -13,7 +13,7 @@ describe('Pane Box', () => {
     })
     it('should render the Pane Box with expected Height & Width', () => {
         const renderedProps = wrapper.props().children[0].props;
-        const expectedProps = { className: 'paneBox-fineBorder', height: 200, src: 'videoPlaceholder.jpg', width: 400 }
+        const expectedProps = { className: 'paneBox-fineBorder', height: 200, src: 'www.testimg.net', width: 400 }
         expect(renderedProps).toEqual(expectedProps);
     })
     it('should render the Pane Box with expected Title element', () => {
