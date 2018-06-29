@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App/App';
 import registerServiceWorker from './registerServiceWorker';
-
 import { createStore, applyMiddleware, compose } from "redux";
-import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
+import createSagaMiddleware from "redux-saga";
 
 import reducer from "./App/redux";
-import { watcherSaga } from "./App/sagas";
+import rootSaga from './rootSaga';
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -25,7 +24,7 @@ let store = createStore(
 );
 
 // run the saga
-sagaMiddleware.run(watcherSaga);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
     <Provider store={store}>

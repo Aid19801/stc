@@ -1,41 +1,41 @@
-// import { combineReducers } from "redux";
-// import bannersReducer from './Banner-Section/reducer';
-// import videosReducer from './Vid-Section/reducer';
-
-// const rootReducer = combineReducers({
-//     videos: videosReducer,
-//     banners: bannersReducer,
-// });
-
-
-// export default rootReducer;
-
-
-// action types
+// Video API
 const API_CALL_REQUEST = "API_CALL_REQUEST";
 const API_CALL_SUCCESS = "API_CALL_SUCCESS";
 const API_CALL_FAILURE = "API_CALL_FAILURE";
 
+// Banner API
+const BANNER_REQUEST = "BANNER_REQUEST";
+const BANNER_SUCCESS = "BANNER_SUCCESS";
+const BANNER_FAILURE = "BANNER_FAILURE";
+
+
 const initialState = {
     fetching: false,
     videos: [],
+    bannerInformation: [],
     error: null
 };
 
-function videosReducer(state = initialState, action) {
-    console.log('AT | action ', action);
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case API_CALL_REQUEST:
-            console.log('000');
             return { ...state, fetching: true, error: null };
             break;
         case API_CALL_SUCCESS:
-            console.log('1111');
             return { ...state, fetching: false, videos: action.response };
             break;
         case API_CALL_FAILURE:
-            console.log('2222');
             return { ...state, fetching: false, videos: [], error: action.error };
+            break;
+
+        case BANNER_REQUEST:
+            return { ...state, fetching: true };
+            break;
+        case BANNER_SUCCESS:
+            return { ...state, fetching: false, bannerInformation: action.response};
+            break;
+        case BANNER_FAILURE:
+            return { ...state, fetching: false, error: action.error};
             break;
 
         default:
@@ -43,4 +43,4 @@ function videosReducer(state = initialState, action) {
     }
 }
 
-export default videosReducer;
+export default reducer;

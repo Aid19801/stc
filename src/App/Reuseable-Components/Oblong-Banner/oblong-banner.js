@@ -1,16 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const BannerFactory = ({ title, imageOne, tagline, waveImage, url }) => {
+const BannerFactory = ({ foo }) => {
     const Banner = () => {
         return (
             <div id="banner-id">
-                <h1>i am a banner</h1>
-                <h2>title: {title}</h2>
-                <img src={imageOne } />
-                <img src={waveImage } />
-                <h2>tagline: {tagline}</h2>
-                <h2>link: {url}</h2>
+                <h1>i am a banner thig</h1>
+                <h1>{foo}</h1>
             </div>
         )
     }
@@ -19,10 +15,7 @@ const BannerFactory = ({ title, imageOne, tagline, waveImage, url }) => {
 
 const mapStateToProps = state => {
     return {
-        title,
-        imageOne,
-        tagline,
-        url,
+        foo: 'bar'
     }
 }
 
