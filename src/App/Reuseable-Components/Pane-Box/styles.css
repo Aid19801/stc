@@ -3,22 +3,24 @@
     border: 1px solid white;
     margin: 5px;
     background-color: rgba(0, 0, 0, 0.6);
-
-    transition: all 0.3s ease;
-
     animation-name: bounce-in-pane-box;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .paneBox-outerDiv:hover {
-    opacity: 0.9;
-    margin: 2px;
-    border: 5px solid white;
+    background-image: url('staticBG.png');
 }
 
 .paneBox-fineBorder {
-    border: 1px solid grey;
     margin: 15px;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.paneBox-fineBorder:hover {
+    margin: 10px;
+    border: 10px solid orange;
 }
 
 .paneBox-title {
@@ -30,6 +32,15 @@
 .paneBox-tagline {
     color: white;
     font-family: monospace;
+}
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    25% { opacity: 0.5; }
+    50% { opacity: 0.3; }
+    90% { opacity: 0.6; }
+    95% { opacity: 0.9; }
+    100% { opacity: 1; }
 }
 
 @keyframes bounce-in-pane-box {
