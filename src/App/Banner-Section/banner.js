@@ -1,16 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import BannerFactory from '../Reuseable-Components/Oblong-Banner/oblong-banner';
+import styles from './styles.css';
 
-const Banner = ({ onLoad, bannerInformation }) => {
+export const Banner = ({ onLoad, bannerInformation, fadeInWhenScrollDown }) => {
     onLoad();
-    const { title, tagline, imageOne } = bannerInformation || '';
-    console.log('BLOOOOOO: ', bannerInformation);
+    
+    const { title, tagline, imageOne, imageTwo } = bannerInformation || '';
     return (
-        <div>
+        <div className="banner-outer-div">
             <h4>{title}</h4>
             <h4>{tagline}</h4>
             <img src={imageOne} alt="imgOne" height={100} width={100} />
+            <img src={imageTwo} alt="imgTwo" height={100} width={1000} />
         </div>
     )
 }
