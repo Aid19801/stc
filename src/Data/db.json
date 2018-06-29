@@ -1,19 +1,22 @@
 {
     "videos": [
     {
-        "title": "The Bouncer 5",
-        "tagline": "Ipsum Lorum and stuff and things.",
-        "image": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.35.51_zpsjbefduoz.png"
+        "title": "The Hunt",
+        "tagline": "Binky Martinez takes us on a hunt for cunt...",
+        "imageOne": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.35.51_zpsjbefduoz.png",
+        "imageTwo": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.08.31_zpsnaiveed5.png"
     },
     {
-        "title": "The Interview",
-        "tagline": "Sometimes i put blurb into components",
-        "image": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.36.13_zpst2oqmcx7.png"
+        "title": "The Bouncer",
+        "tagline": "Vine Hearthrob & ITV2 Sensation, Matt James, tries to blow a security guard!",
+        "imageOne": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.36.13_zpst2oqmcx7.png",
+        "imageTwo": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.09.24_zpsykvsynlp.png"
     },
     {
-        "title": "Some Days Are Nights",
-        "tagline": "Coding on a train & need blurb here.",
-        "image": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.36.35_zps9gn1yewh.png"
+        "title": "Greek Coffee",
+        "tagline": "PRIDE special: Join Stoph D as he attempts to turn caffeine gay by bumming it.",
+        "imageOne": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.36.35_zps9gn1yewh.png",
+        "imageTwo": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.12.48_zps1qvxbef0.png"
     }
     ]
 }

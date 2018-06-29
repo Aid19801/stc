@@ -1,6 +1,8 @@
 .paneBox-outerDiv {
     text-align: center;
-    border: 1px solid white;
+    max-width: min-content;
+    /* flex-grow: 1; */
+    border: 1px solid orange;
     margin: 5px;
     background-color: rgba(0, 0, 0, 0.6);
     animation-name: bounce-in-pane-box;
@@ -10,6 +12,7 @@
 
 .paneBox-outerDiv:hover {
     background-image: url('staticBG.png');
+    border: 1px solid white;
 }
 
 .paneBox-fineBorder {
@@ -38,15 +41,6 @@
 .paneBox-tagline {
     color: white;
     font-family: monospace;
-}
-
-@keyframes fadein {
-    0% { opacity: 0; }
-    25% { opacity: 0.5; }
-    50% { opacity: 0.3; }
-    90% { opacity: 0.6; }
-    95% { opacity: 0.9; }
-    100% { opacity: 1; }
 }
 
 @keyframes bounce-in-pane-box {

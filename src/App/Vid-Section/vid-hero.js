@@ -17,12 +17,6 @@ class VideoSectionContainer extends Component {
         this.props.onRequestVids();
     }
 
-    bounceInPaneBoxes(eachObj, index) {
-        setTimeout(() => {
-            return <PaneBox eachVideo={eachObj} key={index}/>
-        }, 250)
-    }
-
     render() {
         const { videos } = this.props || [];
         const { fetching } = this.props;
@@ -34,7 +28,7 @@ class VideoSectionContainer extends Component {
                     <h1 className="vid-containter-h1">Videohead</h1>
                 </div>
 
-                <div className="flex-container ">
+                <div className="flex-container">
                     { fetching ? <img className="loading-eggtimer" src={eggtimer} width={30} height={30} /> : null }
                     {videos.map((each, i) => <PaneBox eachVideo={each} key={i} />)}
                 </div>
