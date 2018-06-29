@@ -20,6 +20,7 @@ class VideoSectionContainer extends Component {
     render() {
         const { videos } = this.props || [];
         const { fetching } = this.props;
+
         return (
 
             <div className="mainSiteBanner">

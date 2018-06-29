@@ -18,5 +18,21 @@
         "imageOne": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.36.35_zps9gn1yewh.png",
         "imageTwo": "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.12.48_zps1qvxbef0.png"
     }
+    ],
+    "banners": [
+        {
+            "title": "Geeking To Know You",
+            "imageOne": "https://d15mj6e6qmt1na.cloudfront.net/i/30052389/768x512/c.jpg",
+            "tagline": "Episode 12: The Works Of Matthew Broderick",
+            "imageTwo": "https://camo.githubusercontent.com/581da738eed08d9718e710d9c4fdd86a7c3bae8b/687474703a2f2f692e696d6775722e636f6d2f467a5a6a7a46542e706e67",
+            "url": "https://google.com"
+        },
+        {
+            "title": "The STC Podcast",
+            "imageOne": "https://pbs.twimg.com/profile_images/585131784582647808/kqj7-wIV.jpg",
+            "tagline": "Episode 3: Why We're All So Weird",
+            "imageTwo": "https://camo.githubusercontent.com/581da738eed08d9718e710d9c4fdd86a7c3bae8b/687474703a2f2f692e696d6775722e636f6d2f467a5a6a7a46542e706e67",
+            "url": "https://google.com"
+        }
     ]
 }
