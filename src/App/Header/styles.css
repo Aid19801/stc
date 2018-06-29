@@ -17,11 +17,12 @@
 
 
 .navbar-item {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 2px 2px 2px black;
     flex: 1;
     flex-grow: 1;
     margin: auto;
-    color: white;
-    text-shadow: 1px 1px 1px black;
     font-size: 3vh;
     text-align: center;
     margin-top: 0;
@@ -42,8 +43,9 @@
 .resp-navbar-item {
     flex: 1;
     flex-grow: 1;
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 2px 2px 2px black;
     font-size: 3vh;
     text-align: center;
     border: 3px solid black;
