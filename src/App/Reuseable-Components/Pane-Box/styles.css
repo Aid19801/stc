@@ -5,6 +5,9 @@
     background-color: rgba(0, 0, 0, 0.6);
 
     transition: all 0.3s ease;
+
+    animation-name: bounce-in-pane-box;
+    animation-duration: 0.5s;
 }
 
 .paneBox-outerDiv:hover {
@@ -24,9 +27,27 @@
     text-shadow: 1px 1px 1px black;
 }
 
-@media only screen and (max-width: 500px) {
+.paneBox-tagline {
+    color: white;
+    font-family: monospace;
+}
 
-    .paneBox-player {
-        width: 380px;
-    }
+@keyframes bounce-in-pane-box {
+  0%   { padding-top: 45vh; }
+  1%   { padding-top: 44vh; }
+  2%   { padding-top: 43vh; }
+  9%   { padding-top: 45vh; }
+  10%  { padding-top: 42vh; }
+  11%  { padding-top: 43vh; }
+  12%  { padding-top: 42vh; }
+
+  23%  { padding-top: 41vh; }
+
+  33%  { padding-top: 45vh; }
+  34%  { padding-top: 20vh; }
+  40%  { padding-top: 10vh; }
+  44%  { padding-top: 4vh; }
+  60%  { padding-top: 10vh; }
+  100%  { padding-top: 0; }
+  
 }
