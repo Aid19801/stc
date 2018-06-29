@@ -14,7 +14,7 @@ import { watcherSaga } from "./App/sagas";
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
-// dev tools middleware
+// dev tools middleware - dev tools should return-out if there is no dev tools extension installed.
 const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f;
 
 // create a redux store with our reducer above, saga middleware (so sagas can hear actions) &
