@@ -9,11 +9,18 @@ class VideoSectionContainer extends Component {
         super();
         this.state = {
             isLoaded: false,
+            boxCount: 0,
         }
     }
     
     componentDidMount() {
         this.props.onRequestVids();
+    }
+
+    bounceInPaneBoxes(eachObj, index) {
+        setTimeout(() => {
+            return <PaneBox eachVideo={eachObj} key={index}/>
+        }, 250)
     }
 
     render() {
