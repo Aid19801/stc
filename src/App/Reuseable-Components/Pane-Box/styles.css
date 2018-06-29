@@ -16,11 +16,17 @@
     margin: 15px;
     border: 1px solid white;
     transition: all 0.3s ease;
+
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 
 .paneBox-fineBorder:hover {
     margin: 10px;
     border: 10px solid orange;
+
+    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0);
 }
 
 .paneBox-title {
