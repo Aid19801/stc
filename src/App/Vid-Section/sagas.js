@@ -6,7 +6,7 @@ let jsonServerIsOnline = false;
 
 // 2 watcher saga listens for API call, fires off worker saga.
 export function* watcherVidSaga() {
-    yield takeLatest("API_CALL_REQUEST", workerVidSaga);
+    yield takeLatest('API_CALL_REQUEST', workerVidSaga);
 }
 
 // 5 standard fetch for a mock json server
@@ -27,12 +27,24 @@ function jsonServerData() {
 function mockVidsInformation() {
     return jsonServerIsOnline ? jsonServerData() : data.videos;
 }
+
+const randomisePanes = arr => {
+    if (arr.length <= 3) {
+        return arr;
+    }
+    return arr
+        .map(each => ({ sort: Math.random(), value: each }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(each => each.value);
+}
+
 // 3 worker saga gets data based on whether jsonServer is active
 // or not, by firing off mockVids()
+// 6 randomised response is passed through to reducer/store. 
 function* workerVidSaga() {
     try {
-        const response = yield call(mockVidsInformation);
-        yield put({ type: "API_CALL_SUCCESS", response });
+        let response = yield call(mockVidsInformation);
+        yield put({ type: "API_CALL_SUCCESS", response: randomisePanes(response) });
 
     } catch (error) {
         yield put({ type: "API_CALL_FAILURE", error });

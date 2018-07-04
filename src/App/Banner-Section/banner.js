@@ -1,16 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { scrollAndFade } from '../utils/scrollAndFade';
-
 import styles from './styles.css';
 
-export const Banner = ({ onLoad, bannerInformation, fadeInWhenScrollDown }) => {
+export const Banner = ({ onLoad, bannerInformation }) => {
     const { title, tagline, imageOne, imageTwo } = bannerInformation || '';
     onLoad();
-    scrollAndFade();
 
     return (
-        <div className="banner-outer-div hide-banner">
+        <div className="banner-outer-div">
             <h4>{title}</h4>
             <h4>{tagline}</h4>
             <img src={imageOne} alt="imgOne" height={100} width={100} />
@@ -32,15 +29,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);
-
-
-
-
-
-// TO-DO
-// action is fired off when user scrolls down to the bottom of page
-// banner is rendered
-// banner styling - background
-// make brown navbar render BEFORE anything else so people know the page is loading.
-// setup image cacheing
-// spike new look for 3 pane/boxes. They look a bit tacky. Possibly different colour scheme that reflects old VHS store.
