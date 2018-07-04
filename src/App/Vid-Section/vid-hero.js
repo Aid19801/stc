@@ -3,7 +3,7 @@ import PaneBox from '../Reuseable-Components/Pane-Box/pane-box';
 import eggtimer from './eggtimer.png';
 import styles from './styles.css';
 import { connect } from "react-redux";
-import Reveal from 'react-reveal/Reveal';
+
 class VideoSectionContainer extends Component {
     constructor() {
         super();
@@ -49,7 +49,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onRequestVids: () => dispatch({ type: "API_CALL_REQUEST" })
+        onRequestVids: () => dispatch({ type: 'API_CALL_REQUEST' })
     };
 };
 
