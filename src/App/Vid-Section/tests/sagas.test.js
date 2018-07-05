@@ -3,10 +3,6 @@ import sagaHelper from 'redux-saga-testing';
 import * as sagas from '../sagas';
 import * as constants from '../constants';
 
-// jest.mock(sagas, () => ({
-//     mockVidsInformation: jest.fn(),
-// }))
-
 describe('Vid Section Sagas', () => {
 
     describe('watcher vid saga...', () => {
@@ -25,7 +21,37 @@ describe('Vid Section Sagas', () => {
 
         next('it should yield a call with arg mockVidsInformation', (result) => {
             expect(result).toEqual(call(sagas.mockVidsInformation));
-        })
+        });
+
+        next('it should yield the action for API call success...', (result) => {
+            const response = [
+                {
+                    title: "The Test Things",
+                    tagline: "Binky Martinez takes is a funny guy...",
+                    imageOne: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.35.51_zpsjbefduoz.png",
+                    imageTwo: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.08.31_zpsnaiveed5.png"
+                },
+                {
+                    title: "Test Stuff and Others",
+                    tagline: "Binky Martinez takes is a funny guy...",
+                    imageOne: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.35.51_zpsjbefduoz.png",
+                    imageTwo: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.08.31_zpsnaiveed5.png"
+                },
+                {
+                    title: "Cabinet Test Test Doors",
+                    tagline: "Binky McTest takes is a funny guy...",
+                    imageOne: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.35.51_zpsjbefduoz.png",
+                    imageTwo: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.08.31_zpsnaiveed5.png"
+                },
+                {
+                    title: "Duvet Test Pillows III",
+                    tagline: "Michael Jackson loved to dance",
+                    imageOne: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2009.35.51_zpsjbefduoz.png",
+                    imageTwo: "http://i1262.photobucket.com/albums/ii619/ade19801/Screenshot%202018-06-29%2010.08.31_zpsnaiveed5.png"
+                },
+            ];
+            expect(result).toEqual(put({ type: "API_CALL_SUCCESS", response: sagas.randomisePanes(response) }));
+        });
     })
 
 })

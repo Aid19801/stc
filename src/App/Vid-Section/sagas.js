@@ -24,7 +24,7 @@ export function mockVidsInformation() {
     return jsonServerIsOnline ? jsonServerData() : data.videos;
 }
 
-const randomisePanes = arr => {
+export function randomisePanes(arr) {
     if (arr.length <= 3) {
         return arr;
     }
